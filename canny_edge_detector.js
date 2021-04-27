@@ -1196,7 +1196,7 @@ function cannyEdgeDetector() {
 		const buttonHref    = document.getElementById("button-href");
 		const buttonFile    = document.getElementById("button-file");
 		
-		const imgDefault = document.getElementById("img-default");
+		const imgDefault = document.createElement("img");
 		{
 			let localID = imageLoadID;
 			imgDefault.onload = function() {
@@ -1214,6 +1214,7 @@ function cannyEdgeDetector() {
 				};
 				workerScheduler.setStage(param);
 			};
+			imgDefault.src = "img_01.jpg";
 		}
 		
 		buttonDefault.addEventListener("click", function() {
