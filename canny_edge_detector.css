@@ -1,0 +1,117 @@
+/* CSS-file */
+
+p, button, canvas, .range {
+	margin: 3px;
+}
+
+button {
+	width: 150px;
+}
+
+canvas {
+	border: 1px solid black;
+}
+
+.logic-block {
+	border: 1px solid silver;
+	margin: 5px;
+}
+
+/* .range     begin     */
+
+.range {
+	width: 400px;
+	font-size: small;
+	line-height: 0.95;
+	/*border: 1px solid blue;*/
+}
+
+.range .range-row {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.range input {
+	margin: 0px;
+	padding: 0px;
+	border: 0px solid transparent;
+	min-height: 30px;
+	box-sizing: border-box;
+	width: 100%;
+	vertical-align: middle;
+}
+
+.range .range-cell {
+	display: table-cell;
+	box-sizing: border-box;
+	vertical-align: middle;
+	overflow: hidden;
+	/*white-space: nowrap;*/
+	/*border: 1px solid green;*/
+}
+
+.range .range-cell-00 {
+	width: 25%;
+	padding-left: 5px;
+}
+.range .range-cell-01 {
+	width: 50%;
+}
+.range .range-cell-02 {
+	width: 25%;
+}
+.range .range-cell-10 {
+	width: 15%;
+}
+.range .range-cell-11 {
+	width: 20%;
+	text-align: center;
+}
+.range .range-cell-12 {
+	width: 30%;
+	text-align: center;
+}
+.range .range-cell-13 {
+	width: 20%;
+	text-align: center;
+}
+.range .range-cell-14 {
+	width: 15%;
+}
+
+/* .range     end       */
+
+.canvas-waiting {
+	border: 1px solid red;
+	box-shadow: 0px 0px 5px 1px red;
+}
+
+.canvas-ready {
+	border: 1px solid green;
+	/*box-shadow: 0px 0px 5px 1px green;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

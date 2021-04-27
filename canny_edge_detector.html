@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang = "ru">
+	<head>
+		<meta charset = "utf-8">
+		<link rel = "stylesheet" type = "text/css" href = "canny_edge_detector.css">
+		<title>Детектор границ Кэнни</title>
+	</head>
+	<body>
+		<div class = "logic-block">
+			<p>Загрузить изображение</p>
+			<p>
+				<img src = "img_01.jpg" id = "img-default" alt = "" style = "display:none">
+				<button type = "button" id = "button-default">По умолчанию</button>
+				<button type = "button" id = "button-href">По ссылке</button>
+				<button type = "button" onclick = "document.getElementById('button-file').click()">Из файла</button>
+				<input type = "file" id = "button-file" style = "display:none">
+			</p>
+			<p>
+				Состояние: <em><span id = "span-state"></span></em>.
+			</p>
+		</div>
+		<div class = "logic-block">
+			<p>Исходное изображение</p>
+			<canvas id = "canvas-original"></canvas>
+		</div>
+		<div class = "logic-block">
+			<p>Изображение в оттенках серого</p>
+			<canvas id = "canvas-grayscale"></canvas>
+		</div>
+		<div class = "logic-block">
+			<div class = "range" id = "range-diff">
+				<div class = "range-row">
+					<div class = "range-cell range-cell-00">
+						diff:
+					</div><div class = "range-cell range-cell-01">
+					<input type = "range" min = "0" max = "10" step = "1" value = "2">
+					</div><div class = "range-cell range-cell-02">
+						
+					</div>
+				</div>
+				<div class = "range-row">
+					<div class = "range-cell range-cell-10">
+						
+					</div><div class = "range-cell range-cell-11">
+						left
+					</div><div class = "range-cell range-cell-12">
+						
+					</div><div class = "range-cell range-cell-13">
+						right
+					</div><div class = "range-cell range-cell-14">
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class = "range" id = "range-sigma">
+				<div class = "range-row">
+					<div class = "range-cell range-cell-00">
+						sigma:
+					</div><div class = "range-cell range-cell-01">
+					<input type = "range" min = "0.1" max = "5.0" step = "0.1" value = "1.4">
+					</div><div class = "range-cell range-cell-02">
+						
+					</div>
+				</div>
+				<div class = "range-row">
+					<div class = "range-cell range-cell-10">
+						
+					</div><div class = "range-cell range-cell-11">
+						left
+					</div><div class = "range-cell range-cell-12">
+						
+					</div><div class = "range-cell range-cell-13">
+						right
+					</div><div class = "range-cell range-cell-14">
+						
+					</div>
+				</div>
+			</div>
+			
+			<p>Сглаженное изображение</p>
+			<canvas id = "canvas-smoothed"></canvas>
+		</div>
+		<div class = "logic-block">
+			<p>Длины векторов градиентов</p>
+			<canvas id = "canvas-gradient-length"></canvas>
+		</div>
+		<div class = "logic-block">
+			<p>Подавление немаксимумов</p>
+			<canvas id = "canvas-threshold-suppression"></canvas>
+		</div>
+		<div class = "logic-block">
+			<div class = "range" id = "range-gradient-threshold-1">
+				<div class = "range-row">
+					<div class = "range-cell range-cell-00">
+						Пороговая величина градиента 1:
+					</div><div class = "range-cell range-cell-01">
+					<input type = "range" min = "0" max = "200" step = "1" value = "30">
+					</div><div class = "range-cell range-cell-02">
+						
+					</div>
+				</div>
+				<div class = "range-row">
+					<div class = "range-cell range-cell-10">
+						
+					</div><div class = "range-cell range-cell-11">
+						left
+					</div><div class = "range-cell range-cell-12">
+						
+					</div><div class = "range-cell range-cell-13">
+						right
+					</div><div class = "range-cell range-cell-14">
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class = "range" id = "range-gradient-threshold-2">
+				<div class = "range-row">
+					<div class = "range-cell range-cell-00">
+						Пороговая величина градиента 2:
+					</div><div class = "range-cell range-cell-01">
+					<input type = "range" min = "0" max = "200" step = "1" value = "60">
+					</div><div class = "range-cell range-cell-02">
+						
+					</div>
+				</div>
+				<div class = "range-row">
+					<div class = "range-cell range-cell-10">
+						
+					</div><div class = "range-cell range-cell-11">
+						left
+					</div><div class = "range-cell range-cell-12">
+						
+					</div><div class = "range-cell range-cell-13">
+						right
+					</div><div class = "range-cell range-cell-14">
+						
+					</div>
+				</div>
+			</div>
+			
+			<p>Двойная пороговая фильтрация градиентов</p>
+			<canvas id = "canvas-double-threshold-filter"></canvas>
+		</div>
+		<div class = "logic-block">
+			<p>Трассировка области неоднозначности</p>
+			<canvas id = "canvas-track-edge"></canvas>
+		</div>
+		
+		<script defer src = "canny_edge_detector.js"></script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
